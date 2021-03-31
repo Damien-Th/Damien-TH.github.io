@@ -31,9 +31,9 @@ const play = () => {
     //Display "développeur Web"
     if (index <= 15) return displayText(0);
     //Update index
-    if (index <= 16 || (index > 43 && index <= 44)) return addOne();
+    if (index === 16 || index === 44) return addOne();
     //Display "Inscrit chez Openclassrooms"
-    if (index <= 43) return displayText(16);
+    if (index < 44) return displayText(16);
     //Display "Recherche un contrat Pro"
     if (index <= 70) return displayText(44);
 }
@@ -41,7 +41,7 @@ const play = () => {
 let timer = setInterval(play, getRandomArbitrary(80, 180));
 
 const reset = () => setTimeout(() => index = 0, 650);
-const addOne = () => setTimeout(() => index++, 650);
+const addOne = () => setTimeout(() => index++, 950);
 
 const displayText = (valeur) => {
     slidetext.innerText = text.slice(valeur, index);
