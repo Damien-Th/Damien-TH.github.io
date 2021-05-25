@@ -1,1251 +1,523 @@
-/* ------General----- */
-
-html {
-    scroll-behavior: smooth;
-}
+/*-------------General-----------*/
 
 body {
-    margin: 0;
-    background-color: white;
+        width: auto;
+        margin: 0;
+        font-family: 'Varela', Arial, Helvetica, sans-serif;
+        background-color: white;
+        color: black;
+        line-height: 1.4;
 }
 
-@font-face {
-    font-family: "East Border";
-    src: url("/font/East_Border.woff") format("woff");
+html {
+        scroll-behavior: smooth;
 }
 
-/* ------header----- */
+/*-----------Navigation----------*/
 
-header {
-    z-index: 900;
-    position: fixed;
-    top: 0;
-    height: 0;
-    width: 100%;
+.navbar {
+        width: auto;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 10vh;
+        background: #101013de;
+        transition: 400ms;
 }
 
-
-.wrapper {
-    z-index: 1023;
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* ------NavBar----- */
-
-nav {
-    display: none;
-    opacity: 0;
-}
-
-ul {
-    padding: 0;
-    margin-top: 150px;
-    margin-left: -100px;
-    list-style: none;
-}
-
-li {
-    font-family: "Allerta Stencil";
-    margin: 20px;
-    margin-bottom: 40px;
-    text-align: center;
-    color: white;
-    font-size: 2em;
-}
-
-
-.open {
-    transition-delay: 500ms;
-    opacity: 1;
-    display: block;
-}
-
-.display {
-    transition-duration: 500ms;
-    background-color: black;
-    height: 100vh;
-}
-
-
-
-.menu {
-    margin-top: 50px;
-    margin-right: 50px;
-    display: flex;
-    border: 0;
-    height: 60px;
-    background-color: black;
-}
-
-.menu:hover {
-    cursor: pointer;
-}
-
-/* ------section 1----- */
-
-.titresSection1 {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    color: white;
-}
-
-.titresSection1 p {
-    font-size: 800%;
-    margin: 10px;
-    font-family: "East Border", serif;
-}
-
-.one {
-    padding-top: 40px;
-    animation: scale1 1s forwards;
-}
-
-.titresSection1 :nth-child(2) {
-    transition-duration: 500ms;
-    animation: scale2 1s forwards 200ms;
-
-}
-
-.titresSection1 :nth-child(3) {
-    transition-duration: 500ms;
-    animation: scale3 1s forwards 200ms;
-}
-
-@keyframes scale1 {
-    0% {
-        transform: scale(4);
-    }
-
-    75% {
-        transform: scale(0.9) rotate(8deg);
-    }
-
-    100% {
-        transform: scale(1) rotate(8deg);
-    }
-
-}
-
-@keyframes scale2 {
-    0% {
-        transform: scale(4);
-    }
-
-    75% {
-        transform: scale(0.9) rotate(8-deg);
-    }
-
-    100% {
-        transform: scale(1) rotate(-8deg);
-    }
-
-}
-
-@keyframes scale3 {
-    0% {
-        transform: scale(4);
-    }
-
-    75% {
-        transform: scale(0.9) rotate(-8deg);
-    }
-
-    100% {
-        transform: scale(1) rotate(-8deg);
-    }
-
+.navbar ul {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
 }
 
-
-.titresSection1 :nth-child(4) {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 3em;
-}
-
-.titresSection1 a img {
-    width: 30px;
-    height: 50px;
-    transform: rotate(0);
-    animation: arrowmove 2s infinite alternate;
-}
-
-@keyframes arrowmove {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-20px);
-    }
-}
-
-
-.facebookicon img {
-    color: black;
-    background-color: black;
-    width: 50px;
-    height: 50px;
-}
-
-
-
-.section1 {
-    position: relative;
-    color: white;
-    display: flex;
-    align-items: center;
-    background-color: black;
-    height: 100vh;
-    width: 100%;
-}
-
-
-/* ------section 2----- */
-
-.section2 {
-    padding-top: 60px;
-    text-align: center;
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
+.navbar li {
+        margin: 0 1rem;
+        padding: .5rem;
 }
 
-.section2 h2 {
-    font-family: 'Allerta Stencil', sans-serif;
-    font-size: 4em;
-    font-weight: lighter;
+.navbar a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        position: relative;
+        transition: 0.5s;
 }
 
-
-.wrapperbox {
-    display: flex;
+.hamburger {
+        display: none;
 }
 
+/*--------Navigation-Design-----------------*/
 
-.container_box.box1:hover {
-    color: white;
-    background: url(img/corpo.jpg) center no-repeat;
-    background-size: cover;
+li a::after {
+        position: absolute;
+        content: "";
+        top: 125%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #06A8FF;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
 }
 
-.container_box.box2:hover {
-    color: white;
-    background: url(img/reportage.jpg) center no-repeat;
-    background-size: cover;
+li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
 }
-
-
 
-
-.container_box {
-    height: 50vh;
-    display: flex;
-    width: 50%;
+/*----------------Heading----------------*/
+#head {
+        background: url(images/pawel.jpg) no-repeat center fixed;
+        background-size: cover;
+        color: white;
 }
 
-.container_box :hover {
-    cursor: pointer;
+.darkHead {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
 }
 
-.reservationbox {
-    font-size: 1.5em;
-    text-align: center;
-    margin: auto;
-    background-color: black;
-    color: white;
-    width: 30%;
-    height: 50px;
-    margin-top: 50px;
+.darkHead p:nth-child(1) {
+        font-size: 50px;
+        margin: 0 5% 0 10%;
 }
 
-.reservationbox p {
-    margin: 0;
-    padding: 10px;
+.darkHead p:nth-child(2) {
+        font-size: 60px;
+        margin: 0 5% 0 10%;
 }
 
-.livraison {
-    display: flex;
-    justify-content: flex-start;
-    border-style: dotted;
-    border-left: hidden;
-    border-right: hidden;
-    margin: auto 100px auto 100px;
-    height: 15vh;
-    width: 100%;
-}
+/*-------Border-blink/Writing-text----------*/
 
-.click {
-    display: flex;
-    justify-content: flex-start;
-    border-style: dotted;
-    border-left: hidden;
-    border-right: hidden;
-    margin: auto 100px auto 100px;
-    height: 15vh;
-    width: 100%;
+.darkHead p:nth-child(3) {
+        min-height: 34.4px;
+        font-size: 25px;
+        margin: 20px 5% 0 10%;
+        width: fit-content;
+        border-image-outset: 30px;
+        border-right: 0.10em solid #06A8FF;
+        letter-spacing: 0.05em;
+        animation: blink 0.75s step-end infinite;
 }
 
-.click h3,
-.livraison h3 {
-    margin: 0;
-    padding: 50px 0;
-    font-family: 'Allerta Stencil', sans-serif;
-    font-size: 1.75rem;
-    font-weight: lighter;
-}
+@keyframes blink {
 
+        from,
+        to {
+                border-color: transparent;
+        }
 
-.logo img {
-    padding: 20px 80px;
-    width: 120px;
-    height: 120px;
+        50% {
+                border-color: #06A8FF;
+        }
 }
 
-.container_bar {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
+/*----------------Arrow----------------*/
+.arrow {
+        opacity: .5;
+        padding: 2px 18px 0;
+        height: 32px;
+        border-radius: 50%;
+        border: solid 2px #06A8FF;
+        position: absolute;
+        top: 85%;
+        left: 48%;
+        transition: transform 0.5s ease-in-out;
 }
 
-.container_bar :nth-child(1),
-.container_bar :nth-child(2),
-.container_bar :nth-child(3) {
-    background-color: white;
-    width: 50px;
-    height: 4.5px;
-    margin-top: 5px;
+.arrow:hover {
+        opacity: 1;
+        transition: transform 0.5s ease-in-out;
+        transform: scale(1.5);
 }
 
-/* ------section 3----- */
-
-.section3 {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    display: flex;
-    min-height: 50vh;
-    margin: auto;
-    width: auto;
+.arrow span {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-bottom: 2px solid whitesmoke;
+        border-right: 2px solid whitesmoke;
+        transform: rotate(45deg);
 }
 
-.sect3img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 39.1%;
+.arrow span:nth-child(2) {
+        animation: drop 2s ease-in-out reverse infinite;
 }
 
-
-.sect3text {
-    padding: 80px 10px 25px 145px;
-    font-size: 1.2rem;
-    margin: 0;
-    margin-top: 55px;
-    width: 70%;
-}
+@keyframes drop {
 
-.waves {
-    width: 100%;
-}
+        from,
+        to {
+                transform: rotate(45deg) translate(0, 0);
+        }
 
-.sect3text h3 {
-    font-family: "Allerta Stencil";
-    font-size: 2rem;
-    font-weight: lighter;
-    margin: 0;
+        50% {
+                transform: rotate(45deg) translate(-1.5px, -1.5px);
+        }
 }
-
-
 
-/* ------section 4----- */
-.section4 {
-    margin-top: -82px;
-    display: flex;
-    min-height: 90vh;
-    width: auto;
-}
+/*------------------Section---------------------*/
 
-.skullflag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 67.1%;
-    background-color: #C9F3FF;
-}
 
+/*--------PRÉSENTATION-----------*/
 
-.skullflag_icon {
-    height: auto;
-    width: 500px;
-    margin-bottom: 80px;
-    margin-top: 30px;
+.experience {
+        min-height: 60vh;
+        border-bottom: solid 1px grey;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        background-color: whitesmoke;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 }
 
-.skullflag_icon img {
-    width: 100%;
+.experience p {
+        font-size: 1.2rem;
+        font-family: 'Varela', sans-serif;
+        width: 70%;
+        margin: 0 auto;
 }
 
-.waffleimg {
-    width: 380px;
-}
+.experience h1 {
+        font-family: 'Varela', sans-serif;
+        margin: 0 0 18px 0;
+        text-decoration: #06A8FF underline;
+        text-underline-position: under;
 
-.truckimg {
-    width: 348px;
 }
 
-.truck img {
-    width: 100%;
-}
+/*---------COMPÉTENCES-----------*/
 
-.waffle img {
-    width: 100%;
+#section2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: solid 1px grey;
+        padding-top: 90px;
+        padding-bottom: 80px;
 }
 
-
-.trucNwaffle {
-    width: 32.9%;
-    height: 90vh;
+#section2 h2 {
+        text-decoration: #06A8FF underline;
+        text-underline-position: under;
 }
 
-.skullflag p,
-.waffle p,
-.truck p {
-    margin: 0;
-    position: absolute;
-    bottom: 20px;
-    left: 100px;
-    font-size: 1.2em;
-    font-weight: bolder;
+#section2 li {
+        list-style: none;
+        color: white;
+        background-color: #06A8FF;
+        margin: 2px;
+        padding: 10px;
+        width: fit-content;
+        border-radius: 20px;
 }
-
 
-.truck {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45vh;
-    background-color: rgb(243, 209, 168);
+#section2 ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 16px 15%;
 }
 
-.waffle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 45vh;
-    background-color: #DFDFDF;
-}
 
+/*---------RÉALISATION-----------*/
 
-.waffle p,
-.truck p {
-    position: absolute;
-    left: 60px;
+#section3 {
+        padding-top: 90px;
+        padding-bottom: 80px;
+        text-align: center;
+        background-color: whitesmoke;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: black;
+        height: auto;
+        padding-bottom: 80px;
 }
-
-
 
-
-/* ------section 5----- */
-.section5 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 60vh;
+.realisation {
+        margin-bottom: 20px;
+        height: fit-content;
+        width: 100%;
+        text-decoration: #06A8FF underline;
+        text-underline-position: under;
 }
 
-.sect5 {
-    width: 85%;
-}
 
-.section5 h2 {
-    font-size: 4em;
-    font-weight: lighter;
-    font-family: "Allerta Stencil";
-    margin-bottom: 40px;
-}
+/*---------figure-----------*/
 
-.section5 h4 {
-    margin-top: 0;
-    font-size: 1.2em;
-    font-weight: lighter;
+figure {
+        border: #06A8FF 4px solid;
+        padding: 5px;
+        width: 300px;
+        height: 350px;
 }
 
-.sect5text {
-    display: flex;
+figure img {
+        width: 300px;
+        height: 150px;
 }
 
-.sect5text :first-child {
-    line-height: 1.2em;
-    font-size: 1.5em;
-    font-family: "Allerta Stencil";
-    padding-right: 30px;
-    width: 50%;
-    margin-bottom: 80px;
+figcaption {
+        background-color: white;
+        color: black;
+        font: italic smaller sans-serif;
+        padding: 3px;
+        text-align: center;
+        height: 190px;
 }
 
-.sect5text :last-child {
-    font-size: 1.4em;
-    line-height: 1.4em;
-    width: 50%;
-    margin-bottom: 80px;
+figcaption a {
+        text-decoration: none;
+        color: #06A8FF;
 }
 
-.leconcept {
-    position: absolute;
-    bottom: -45px;
-    z-index: 10;
-    text-align: center;
-    color: white;
-    width: 220px;
-    height: 60px;
-    background-color: black;
-    padding-bottom: 30px;
-}
+/*---------CONTACT---------------*/
 
-.leconcept p {
-    font-size: 1.9em;
-    font-family: "Allerta Stencil";
+#section4 {
+        align-items: center;
+        margin: auto;
+        width: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding-top: 90px;
+        position: relative;
+        height: 90vh;
 }
 
-/* ------section 6----- */
-.section6 {
-    max-height: 100vh;
+#section4 p {
+        font-size: 1.2rem;;
 }
 
-.sect6 {
-    display: block;
+.iconanime{
+        margin: auto;
+        display: flex;
+        justify-content: center;
 }
 
-.section6 img {
-    width: 100%;
+.github {
+        width: 90px;
+        height: 90px; 
 }
 
-/* ------section 7----- */
-
-.section7 {
-    display: flex;
-    min-height: 40vh;
-    width: auto;
+.path2{
+        transition: .6s;
 }
 
-.section7 h4 {
-    padding: 20px 0 0 50px;
-    font-size: 1.2em;
-    margin: 0;
+.github:hover .path2{
+        fill: rgb(26, 119, 206);
 }
 
-.section7 h2 {
-    font-size: 4em;
-    font-family: "Allerta Stencil";
-    padding: 0 0 0 50px;
-    margin-bottom: 0;
-}
+/*-------Animation_Linkedin--------*/
 
-.sect7text {
-    margin-top: -80px;
-    width: 58%;
-    color: white;
-    background-color: black;
-}
 
-.p1 {
-    padding: 0 100px 0 50px;
-    line-height: 1.2em;
-    font-size: 1.6em;
-    font-family: "Allerta Stencil";
+.path {
+        stroke-dasharray: 1000;
 }
 
-.p2 {
-    padding: 0 80px 0 50px;
-    font-size: 1.4em;
+.linky:hover .path {
+        animation: move 1.5s ease-in-out reverse;
 }
 
+@-webkit-keyframes move {
+        0% {
+                stroke-dashoffset: 0;
+        }
 
-.picsbretagne {
-    width: 42%;
-}
+        80% {
+                fill: white;
+        }
 
-.picsbretagne img {
-    margin-top: 60px;
-    margin-left: 50px;
-    max-width: 70%;
+        100% {
+                stroke-dashoffset: 1000;
+                stroke-width: "0";
+        }
 }
 
-/* ------section 8----- */
+@keyframes move {
+        0% {
+                stroke-dashoffset: 0;
+        }
 
-.section8 {
-    display: flex;
-}
+        80% {
+                fill: white;
+        }
 
-.section8 img {
-    width: 20%;
+        100% {
+                stroke-dashoffset: 1000;
+                stroke-width: "0";
+        }
 }
 
-/* ------footer----- */
+/*--------------footer------------*/
 
 footer {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: auto;
-    color: white;
-    height: 40vh;
-    background: url(img/footer.jpg) center no-repeat;
-    background-size: cover;
-    font-family: sans-serif;
-    padding: 50px 25px;
-    margin: auto;
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        margin: 0;
+        text-align: center;
+        padding-top: 10px;
+        background-color: #0C0F0A;
+        color: white;
 }
 
-
-
-footer a {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    text-decoration: none;
-    line-height: 1.2;
-    font-size: 40px;
+footer p {
+        font-size: 1rem;
+        margin: 0;
 }
 
-.footerlink1 {
-    margin-right: 80px;
-}
+/*----------------------------------Responsive-----------------------------------*/
 
-.containerlink {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.containerlink a:hover {
-    text-decoration: underline;
-}
-
-.wrapplink {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-}
-
-.copyright {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-.fblink {
-    margin-top: 20px;
-    width: 50px;
-    height: 30px;
-}
-
-/* ----------------Responsive--------------------- */
-
-
-@media screen and (max-width: 1540px) {
-
-    .sect3img {
-        width: 40.4%;
-    }
-
-    .picsbretagne img {
-        margin-top: 65px;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .titresSection1 p {
-        font-size: 400%;
-    }
-
-
-    .titresSection1 :nth-child(4) {
-        margin-top: 280px;
-    }
-}
-
-
+/*---------------max-width: 789px--------------*/
 
 @media screen and (max-width: 789px) {
 
+        /*---------------Hamburger--------------*/
+
+        .hamburger {
+                display: flex;
+                flex-direction: column;
+                height: 42px;
+                margin: 10px 20px 0 0;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+                width: 35px;
+                height: 6px;
+                background-color: white;
+                margin-top: 6px;
+                border-radius: 5%;
+                transition: all 0.5s;
+        }
+
+        .open .bar1 {
+                transform: translateY(200%) rotate(-45deg);
+        }
+
+        .open .bar3 {
+                transform: translateY(-200%) rotate(45deg);
+        }
+
+        .open .bar2 {
+                transform: rotate(-45deg);
+                opacity: 0;
+        }
+
+        /*---------------Navigation--------------*/
+
+        .navbar {
+                display: flex;
+                justify-content: flex-end;
+                transition: all 0.5s;
+
+        }
+
+
+        .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                opacity: 0;
+                margin-left: 50px;
+        }
+
+        .hide ul {
+                opacity: 1;
+        }
+
+        .hide {
+                height: 30%;
+        }
+
+        .navbar ul li a:hover {
+                border-top: white solid 0px;
+        }
+
+        .navbar ul li {
+                padding: 2px;
+        }
+
+        .navbar ul .link1 {
+                transform: scaleY(0);
+                transition-delay: 4s;
+                transition: .4s ease .3s;
+        }
+
+        .hide ul .link1 {
+                transform: scaleY(1);
+        }
+
+        li a::before {
+                content: none;
+        }
+
+        li a::after {
+                content: none;
+        }
+
+        /*---------------General--------------*/
+
+        p {
+                font-size: 1rem;
+        }
+
+        h1 {
+                font-size: 1rem;
+                margin: 20px 20px;
+        }
+
+        /*---------------HEAD--------------*/
+
+        .darkHead p:nth-child(3) {
+                min-height: 22px;
+                font-size: 1rem;
+                margin-bottom: 50px;
+        }
 
-    .section4 {
-        display: flex;
-        flex-direction: column;
-    }
+        .darkHead p:nth-child(1), .darkHead p:nth-child(2) {
+                font-size: 35px;
+        }
 
-    .skullflag {
-        width: 100%;
-    }
+        /*---------------Section--------------*/
 
-    .trucNwaffle {
-        width: 100%;
-    }
+        #section4 {
+                width: 70%;
+                height: 85vh;
+                padding-top: 10px;
+        }
 
+        #section4 p {
+                font-size: 1rem;
+        }
 
-    .section2 {
-        height: auto;
-    }
+        .experience p{
+                width: 80%;
+        }
 
-    .reservationbox {
-        width: 90%;
-    }
+        /*---------------Footer--------------*/
 
-    .wrapperbox {
-        display: flex;
-        flex-direction: column;
-    }
+        footer p {
+                font-size: .6rem;
+        }
 
-    .container_box {
-        width: 100%;
-        height: auto;
-    }
-
-    .click,
-    .livraison {
-        margin: 0;
-    }
-
-    .sect3text {
-        padding: 80px 10px 25px 105px;
-    }
-
-
-    .section3 {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .sect3img {
-        width: 100%;
-    }
-
-    .sect3text {
-        padding-right: 0;
-    }
-
-    .sect5text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sect5text :first-child {
-        width: 100%;
-        margin-bottom: 0;
-    }
-
-    .sect5text :last-child {
-        width: 100%;
-        padding-right: 30px;
-    }
-
-
-    .section7 {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .sect7text {
-        margin-top: -10px;
-        width: 100%;
-    }
-
-    .picsbretagne {
-        width: 100%;
-    }
-
-
-    .section8 img {
-        width: 50%;
-    }
-
-    .section8 {
-        flex-wrap: wrap;
-    }
-
-
-
-
-    footer a {
-        font-size: 35px;
-    }
-
-    footer {
-        min-height: 50vh;
-    }
-
-    .wrapplink {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-    }
-
-    .footerlink1 {
-        margin: 0;
-    }
-
-}
-
-
-@media screen and (max-width: 560px) {
-    .section8 img {
-        width: 100%;
-    }
-}
-
-
-
-
-/*-----------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-/*Modal*/
-.custom-box {
-    z-index: 1500;
-    width: 100%;
-    margin: auto;
-    color: white;
-}
-
-#modal {
-    z-index: 1500;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.contentmodal {
-    z-index: 1500;
-    margin: auto;
-    display: flex;
-    width: 50%;
-    height: 500px;
-}
-
-.modalleft {
-    width: 50%;
-    height: 500px;
-}
-
-.modalleft img {
-    width: 100%;
-    height: 500px;
-}
-
-.modalcross img {
-    z-index: 1500;
-    width: 50px;
-    cursor: pointer;
-}
-
-.modalcross img:hover {
-    cursor: pointer;
-}
-
-#modal-close {
-    cursor: pointer;
-}
-
-.modalright {
-    background-color: white;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-}
-
-.modalcross {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.modalright p {
-    color: black;
-    margin: 5px 10px;
-    font-family: "Allerta Stencil";
-    font-size: 2em;
-    padding: 0px 20px 30px 20px;
-}
-
-.modalresa {
-    width: fit-content;
-    font-size: 1.5em;
-    margin: auto;
-    padding: 10px 30px;
-    margin-top: 90px;
-    text-align: center;
-    background-color: black;
-}
-
-
-.modalresa a {
-    text-decoration: none;
-    color: white;
-}
-
-/*---------------nosEtablissements----------------------*/
-
-.sect1resto {
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-
-.sect1resto img {
-    padding-top: 20px;
-    background-color: black;
-    color: white;
-    width: 40%;
-}
-
-.wrapper2 {
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-}
-
-
-.containeradress {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-
-.address1 h4,
-.address2 h4 {
-    font-size: 1.8em;
-    margin-top: 70px;
-    margin-bottom: 10px;
-}
-
-
-.address1 p,
-.address2 p {
-    font-size: 3.5em;
-    font-family: "Allerta Stencil";
-    text-decoration: underline;
-    margin-top: 0;
-}
-
-.address1 {
-    text-align: center;
-    width: 50%;
-}
-
-.address2 {
-    text-align: center;
-    width: 50%;
-}
-
-
-.copyright2 p {
-    font-size: 1.2em;
-    text-align: center;
-}
-
-
-@media screen and (max-width: 1189px) {
-    .containeradress {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .address1,
-    .address2 {
-        width: auto;
-    }
-
-
-    .address1 p,
-    .address2 p {
-        display: flex;
-        justify-content: ce;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .wrapper2 {
-        margin: auto;
-    }
-}
-
-@media screen and (max-width: 789px) {
-
-    .container_box {
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    .address1 p,
-    .address2 p {
-        font-size: 2.5em;
-    }
-
-    .address1 h4,
-    .address2 h4 {
-        font-size: 1em;
-    }
-
-    .contentmodal {
-        position: relative;
-        flex-direction: column;
-        width: 80%;
-    }
-
-    .modalleft,
-    .modalright {
-        width: 100%;
-        height: 300px;
-    }
-
-    .modalcross {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .modalright p {
-        font-size: 1.5em;
-        padding: 20px 50px 0px 100px;
-    }
-
-    .modalresa {
-        font-size: 1em;
-        margin-top: 20px;
-        width: 70%;
-        margin-bottom: 15px;
-    }
-
-    .logo img {
-        padding: 10px 10px;
-    }
-
-    .menu {
-        margin-right: 10px;
-    }
-
-}
-
-
-.nosrestaurant {
-    display: flex;
-    width: 100%;
-    height: 50vh;
-}
-
-.restoimg {
-    width: 50%;
-}
-
-.restoimg img {
-    width: 100%;
-    height: 50vh;
-}
-
-.restotext {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    font-weight: 500;
-    font-size: 1.6em;
-}
-
-.restotext p {
-    margin-left: 100px;
-}
-
-.pp1 {
-    color: white;
-    background-color: black;
-}
-
-.sectrestaurant a:link {
-    text-decoration: none;
-}
-
-
-.sect2resto,
-.sect2even {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-}
-
-.sect2restoN3,
-.sect2evenN3 {
-    display: flex;
-}
-
-.sect2restoN3 h2,
-.sect2restoN1,
-.sect2evenN3 h2,
-.sect2evenN1 {
-    font-family: "Allerta Stencil";
-    font-size: 2rem;
-    font-weight: lighter;
-}
-
-
-.sect2restoN3 p,
-.sect2evenN3 p {
-    font-size: 1.2em;
-}
-
-.sect2restoN1,
-.sect2evenN1 {
-    display: flex;
-    background-color: white;
-    margin-top: -140px;
-    height: 20vh;
-    width: 50%;
-}
-
-.sect2restoN1 h2,
-.sect2evenN1 h2 {
-    font-weight: 300;
-    font-size: 2em;
-    margin: auto;
-}
-
-.sect2restoN1 p,
-.sect2evenN1 p {
-    font-size: 1.2em;
-}
-
-.sect2restoN2,
-.sect2evenN2 {
-    display: flex;
-    width: 50%;
-}
-
-.sect2restoN2 p,
-.sect2evenN2 p {
-    margin: auto;
-    margin-top: 20px;
-    font-size: 1.1em;
-    padding-left: 120px;
-}
-
-.sect2restoN3,
-.sect2evenN3 {
-    width: 100%;
-}
-
-.sect2restoN3 h2,
-.sect2evenN3 h2 {
-    width: 65%;
-    margin-top: 80px;
-    padding-left: 180px;
-}
-
-.sect2restoN3 p,
-.sect2evenN3 p {
-    font-size: 1.3em;
-    line-height: 1.5em;
-    width: 40%;
-    padding: 60px 220px;
-}
-
-
-.sect1even {
-    height: 100vh;
-    width: 100%;
-}
-
-.sect1even img {
-    width: 100%;
-}
-
-.sect2evenN2 {
-    background-color: white;
-}
-
-.sect2evenN1 {
-    margin-top: -125px;
-}
-
-
-
-@media screen and (max-width: 489px) {
-
-    .contentmodal {
-        margin: 0;
-        height: 600px;
-    }
-
-    .custom-box {
-       width: 450px;
-       height: 400px;
-       margin: 55px 2px 0 25px;
-    }
-
-
-    .copyright {
-            margin-top: 10px;
-    }
-
-    .sect3text {
-        padding: 80px 10px 25px 50px;
-    }
-
-
-    .titresSection1 :nth-child(4) {
-        margin-top: 100px;
-    }
-
- 
-    #modal {
-        height: 500px;
-        width: 800px;
-    }
-
-    .waffleimg {
-        width: 280px;
-    }
-
-    .titresSection1 {
-        padding-top: 100px;
-    }
-
+        footer {
+                padding-top: 20px;
+        }
 }
