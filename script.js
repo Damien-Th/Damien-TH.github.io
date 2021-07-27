@@ -83,48 +83,52 @@ const homeSectionOptions = {
 };
 
 // switch navbar color
-const homeSectionObserver = new IntersectionObserver(function(entries){
-entries.forEach(entry => {
-    if(!entry.isIntersecting) {
-        navbar.classList.add("blueModeBar");
-        ColorSwitch = true;
-    }else{
-        navbar.classList.remove("blueModeBar");
-        ColorSwitch = false;
-    }
-})
-},homeSectionOptions);
+const homeSectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            navbar.classList.add("blueModeBar");
+            ColorSwitch = true;
+        } else {
+            navbar.classList.remove("blueModeBar");
+            ColorSwitch = false;
+        }
+    })
+}, homeSectionOptions);
 
 homeSectionObserver.observe(homeSection);
 
 /*------------fade-in_animation---------------*/
+
+let isMobile = false;
+
+if (/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    isMobile = true;
+}
 
 const appearOptions = {
     threshold: 1,
     rootMargin: "0px 0px -100px 0px"
 };
 
-const appearOnscroll = new IntersectionObserver(function(entries, appearOnscroll){
-entries.forEach(entry => {
+const appearOnscroll = new IntersectionObserver(function (entries, appearOnscroll) {
+    entries.forEach(entry => {
 
-    if(!entry.isIntersecting && !ColorSwitch) {
-        return entry.target.classList.remove("appear");
-    }else{
-        entry.target.classList.add("appear");
-    }
-})
-},appearOptions);
+        if (isMobile) {
+            if (!entry.isIntersecting) {
+                return
+            } else {
+                entry.target.classList.add("appear");
+                appearOnscroll.unobserve(entry.target);
+            }
+        } else {
+            !entry.isIntersecting && !ColorSwitch ? entry.target.classList.remove("appear") : entry.target.classList.add("appear");
+        }
+
+    })
+}, appearOptions);
 
 faders.forEach(fader => {
     appearOnscroll.observe(fader);
 });
 
 /*-----------------------------------------------------------*/
-
-
-
-
-
-
-
-
