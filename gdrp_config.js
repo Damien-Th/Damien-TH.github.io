@@ -5,7 +5,7 @@ tarteaucitron.init({
     "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
     "cookieName": "tarteaucitron", /* Cookie name */
 
-    "orientation": "top", /* Banner position (top - bottom) */
+    "orientation": "bottom", /* Banner position (top - bottom) */
  
     "groupServices": false, /* Group services by category */
     "serviceDefaultState": "wait", /* Default state (true - wait - false) */
