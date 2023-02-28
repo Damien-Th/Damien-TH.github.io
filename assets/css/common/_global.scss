@@ -1,0 +1,87 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.header-container {
+    max-width: 1850px;
+    margin: auto;
+    padding: 30px 50px;
+
+    @media screen and (max-width: 1800px) {
+        max-width: 1550px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        padding: 30px;
+    }
+}
+
+.container {
+    max-width: 1700px;
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    @media screen and (max-width: 1800px) {
+        max-width: 1400px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.navbar {
+    .container {
+        padding: 25px 50px;
+    
+        @media screen and (max-width: $mobile) {
+            padding: 25px 30px;
+        }
+    }
+}
+
+.space_section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.space_section_big {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}

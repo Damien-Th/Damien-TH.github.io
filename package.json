@@ -1,0 +1,13 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "sass assets/css/main.scss dist/styles/main.css",
+    "watch": "sass --watch assets/css/main.scss dist/styles/main.css"
+  },
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}

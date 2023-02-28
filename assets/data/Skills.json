@@ -1,0 +1,59 @@
+{
+    "languages" : [
+        {
+            "Name": "HTML5",
+            "Image": "/html.png"
+        }, 
+        {
+            "Name": "CSS3",
+            "Image": "/css.png"
+        }, 
+        {
+            "Name": "Sass",
+            "Image": "/sass.png"
+        }, 
+        {
+            "Name": "Javascript",
+            "Image": "/js.png"
+        }, 
+        {
+            "Name": "React",
+            "Image": "/react.png"
+        }, 
+        {
+            "Name": "PHP",
+            "Image": "/php.png"
+        }, 
+        {
+            "Name": "MySQL",
+            "Image": "/mysql.png"
+        }, 
+        {
+            "Name": "NodeJs",
+            "Image": "/node.png"
+        }, 
+        {
+            "Name": "MongoDB",
+            "Image": "/mongodb.png"
+        }
+    ],
+
+    "others" : [
+        {
+            "Name": "Wordpress",
+            "Image": "/wordpress.png"
+        }, 
+        {
+            "Name": "ACF",
+            "Image": "/acf.png"
+        }, 
+        {
+            "Name": "Git",
+            "Image": "/git.png"
+        }, 
+        {
+            "Name": "Sequelize",
+            "Image": "/sequelize.png"
+        }
+    ]
+}

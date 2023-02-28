@@ -1,0 +1,19 @@
+$primary: #011538;
+$secondary: #ffa900;
+$primary_hover: #005dff;
+$secondary_hover: #e99b00;
+
+$html-font-size: 16px;
+
+$Shrikhand: 'Shrikhand', sans-serif;
+$Roboto: 'Roboto', sans-serif;
+
+$tablet: 999px;
+$mobile: 690px;
+
+:root {
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+	--primary_hover: #{$primary_hover};
+	--secondary_hover: #{$secondary_hover};
+}

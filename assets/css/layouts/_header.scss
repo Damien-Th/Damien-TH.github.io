@@ -1,0 +1,198 @@
+header {
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: color(primary);
+
+    .header-container {
+        @include flex(row, nowrap, space-between, center);
+        position: relative;
+    }
+
+    nav {
+        display: flex;
+        width: 100%;
+    }
+
+    .navigation-desktop {
+        ul {
+            margin: 0;
+            padding: 0;
+            @include flex(row, nowrap, center,center);
+            gap: 30px;
+            width: 100%;
+    
+            li {
+                a {
+    
+                    position: relative;
+                    font-weight: bold;
+                    color: white;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        top: 125%;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: color(secondary);
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.5s ease-out;
+                    }
+        
+                    &:hover::after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+    
+            li:first-child {
+                margin-right: auto;
+            }
+        }
+    }
+
+    .navigation-mobile {
+        display: none;
+    }
+
+   
+    
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: $tablet) {
+
+    header {
+       .container {
+            @include flex(row,nowrap, space-between, center);
+            position: relative;
+       }
+
+        .navigation-desktop {
+            ul {
+         
+                li {
+                    display: none;
+                }
+        
+                li:first-child {
+                    display: block;
+                }
+            }
+        }
+
+        .navigation-mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $secondary;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 25;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .5s ease-in;
+            @include flex(row, nowrap, center,center);
+            text-align: center;
+
+            ul {
+                width: 100%;
+                @include flex(column, nowrap, center, center);
+                gap: 10px;
+                font-size: 24px;
+
+                li {
+                   transform: translateX(-30%);
+                   opacity: 0;
+                   transition: transform .5s ease-in-out .4s;
+
+                    a {
+                        color: white;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: color(primary);
+                        }
+                    }
+                }
+
+            }
+        }
+
+        &.hide {
+            .navigation-mobile {
+                transform: scaleX(100%);
+
+                ul {
+                    li {
+                       transform: translateX(0);
+                       opacity: 1;
+                       transition: all .5s ease-in-out .4s;
+                    }
+                }
+            }
+        }
+    
+        .hamburger {
+            position: absolute;
+            right: 0;
+            z-index: 50;
+            padding-right: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 42px;
+            cursor: pointer;
+        }
+        
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 35px;
+            height: 6px;
+            background-color: white;
+            margin-top: 6px;
+            border-radius: 5%;
+            transition: all 0.5s;
+        }
+        
+        .open {
+           
+            .bar1 {
+                transform: translateY(200%) rotate(-45deg);
+            }
+    
+            .bar2 {
+                transform: rotate(-45deg);
+                opacity: 0;
+            }
+    
+            .bar3 {
+                transform: translateY(-200%) rotate(45deg);
+            }
+
+            &:hover {
+
+                .bar {
+                    background-color: color(primary);
+                }
+            }
+        }
+    }
+
+    
+    
+ }

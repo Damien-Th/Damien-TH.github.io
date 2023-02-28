@@ -1,0 +1,58 @@
+{
+    "Wordpress" : [
+        {
+            "Name": "Lamia J.P",
+            "Link": "https://lamia-jp.fr/",
+            "Image": "/lamia.png",
+            "Description" : "Wordpress - Bedrock - Sage"
+        }, 
+        {
+            "Name": "Réval Plastiques",
+            "Link": "https://revalplastiques.com",
+            "Image": "/reval_plastique.png",
+            "Description" : "Wordpress - Bedrock - Sage"
+        }, 
+        {
+            "Name": "Abis Cloison",
+            "Link": "https://abis-cloison.com",
+            "Image": "/abis_cloison.png",
+            "Description" : "Wordpress - Bedrock - Sage"
+        },      
+        {
+            "Name": "Agnès BARDEL",
+            "Link": "https://agnesbardel.fr",
+            "Image": "/agnes_bardel.png",
+            "Description" : "Wordpress - Bedrock - Sage"
+        },      
+        {
+            "Name": "Dalalu",
+            "Link": "https://dalalu21.fr",
+            "Image": "/dalalu.png",
+            "Description" : "Wordpress - Salient"
+        },      
+        {
+            "Name": "Inserm",
+            "Link": "https://u1093.u-bourgogne.fr/",
+            "Image": "/inserm.png",
+            "Description" : "Wordpress - Salient"
+        },   
+        {
+            "Name": "La Bella Napoli",
+            "Link": "https://labellanapoli.fr/",
+            "Image": "/labellanapoli.png",
+            "Description" : "Wordpress - Salient"
+        },   
+        {
+            "Name": "Paisage",
+            "Link": "https://paisage.fr",
+            "Image": "/Paisage.png" ,
+            "Description" : "Wordpress - Bedrock - Sage"
+        },
+        {
+            "Name": "Ecolib",
+            "Link": "https://ecolib-bfc.org",
+            "Image": "/Ecolib.png",
+            "Description" : "Wordpress - Salient"
+        }
+    ]
+}
