@@ -45,13 +45,13 @@
         {
             "Name": "Paisage",
             "Link": "https://paisage.fr",
-            "Image": "/Paisage.png" ,
+            "Image": "/paisage.png" ,
             "Description" : "Wordpress - Bedrock - Sage"
         },
         {
             "Name": "Ecolib",
             "Link": "https://ecolib-bfc.org",
-            "Image": "/Ecolib.png",
+            "Image": "/ecolib.png",
             "Description" : "Wordpress - Salient"
         }
     ]
