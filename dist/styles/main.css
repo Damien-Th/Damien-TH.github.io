@@ -152,7 +152,7 @@ footer {
 footer .container {
   text-align: center;
   color: white;
-  padding: 30px 0;
+  padding: 30px;
 }
 
 header {
@@ -316,6 +316,7 @@ header .navigation-mobile {
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .projets {
@@ -724,16 +725,21 @@ html {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   color: var(--primary);
   font-weight: 700;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 .contact .container .contact_link a span:last-child {
   margin-top: 4px;
   font-weight: 500;
 }
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 999px) {
   .contact .container .contact_link a {
     width: 45%;
     margin-bottom: 35px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .contact .container .contact_link a {
+    width: 90%;
   }
 }
 .contact .container .contact_link a:hover .image-wrapper {

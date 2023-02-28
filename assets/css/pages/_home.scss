@@ -435,17 +435,21 @@ html {
                 box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
                 color: color(primary);
                 font-weight: 700;
-                padding-bottom: 15px;
+                padding: 15px;
 
                 span:last-child {
                     margin-top: 4px;
                     font-weight: 500;
                 }
 
-                @media screen and (max-width: $mobile) {
+                @media screen and (max-width: $tablet) {
                     width: 45%;
                     margin-bottom: 35px;
-                }            
+                }       
+
+                @media screen and (max-width: $mobile) {
+                    width: 90%;
+                }               
 
                 &:hover {
                     .image-wrapper {
