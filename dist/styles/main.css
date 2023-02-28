@@ -57,6 +57,7 @@ p {
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 html {
@@ -316,7 +317,6 @@ header .navigation-mobile {
 }
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 .projets {
