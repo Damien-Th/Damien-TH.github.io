@@ -551,7 +551,7 @@ html {
 .competence .competence_container .competence {
   margin-bottom: 80px;
   position: relative;
-  width: max-content;
+  width: fit-content;
 }
 .competence .competence_container .competence::after {
   position: absolute;
@@ -563,7 +563,7 @@ html {
   height: 4px;
 }
 .competence .competence_container h3 {
-  width: max-content;
+  width: fit-content;
   background: orange;
   margin: 40px auto 30px auto;
   padding: 8px 12px;
