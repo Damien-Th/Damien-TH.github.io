@@ -141,10 +141,21 @@ a {
   padding-top: 90px;
   padding-bottom: 90px;
 }
+@media screen and (max-width: 690px) {
+  .space_section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
 
 .space_section_big {
   padding-top: 50px;
   padding-bottom: 80px;
+}
+@media screen and (max-width: 690px) {
+  .space_section_big {
+    padding-bottom: 50px;
+  }
 }
 
 footer {
