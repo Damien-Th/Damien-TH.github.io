@@ -707,7 +707,7 @@ html {
   gap: 20px;
   margin-top: 75px;
 }
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 999px) {
   .contact .container .contact_link {
     flex-wrap: wrap;
   }

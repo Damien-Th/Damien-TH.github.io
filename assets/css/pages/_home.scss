@@ -420,7 +420,7 @@ html {
             gap: 20px;
             margin-top: 75px;
 
-            @media screen and (max-width: $mobile) {
+            @media screen and (max-width: $tablet) {
                 flex-wrap: wrap;
             }            
 
