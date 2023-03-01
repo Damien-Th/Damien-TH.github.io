@@ -25,9 +25,6 @@ export class Websites {
         function Template (name, link, image, description) {
             let html = `<a href="${link}" target="_blank" class="swiper-slide">
                     <img src="/assets/images/projets${image}" alt="image website">
-                    <div class="overlay">
-                        <span></span>
-                    </div>
                     <div class="info">
                         <h3>${name}</h3>
                         <p>${description}</p>

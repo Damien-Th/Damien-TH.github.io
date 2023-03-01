@@ -1,55 +1,71 @@
+@import "./mixins";
+@import "./variables";
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
-
-h1 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-}
-
-h2, h3, h4, p, a {
-    font-family: "Open Sans" , sans-serif
-}
 
 :root {
     font-size: $html-font-size;
 }
 
 h1 {
-    font-size: 32px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: rem(32);
 }
 
 h2 {
-    font-size: 28px;
+    font-size: rem(28);
+}
+
+h3 {
+    font-size: rem(24);
 }
 
 p {
-    font-size: 22px;
+    font-size: rem(22);
 }
+
+h2, h3, h4, p, a {
+    font-family: "Open Sans" , sans-serif
+}
+
+//-- responsive Tablet --//
 
 @media screen and (max-width: $tablet) {
     h1 {
-        font-size: 28px;
+        font-size: rem(28);
     }
     
     h2 {
-        font-size: 25px;
+        font-size: rem(25);
     }
-    
+
+    h3 {
+        font-size: rem(23);
+    }
+
     p {
-        font-size: 22px;
+        font-size: rem(22);
     }
 }
+
+//-- responsive Mobile --//
+
 @media screen and (max-width: $mobile) {
     h1 {
-        font-size: 22px;
+        font-size: rem(22);
     }
     
     h2 {
-        font-size: 18px;
+        font-size: rem(20);
+    }
+
+    h3 {
+        font-size: rem(18);
     }
     
     p {
-        font-size: 16px;
+        font-size: rem(16);
     }
 }

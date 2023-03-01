@@ -1,10 +1,15 @@
+@import "./../common/mixins";
+@import "./../common/variables";
+
 footer {
     background-color: color(primary);
 
     .container {
         text-align: center;
-        color: white;
         padding: 30px;
+        font-size: rem(20);
+        @media screen and (max-width: $tablet) {
+            font-size: rem(18);
+        }
     }
-
 }

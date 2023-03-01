@@ -1,50 +1,5 @@
-html {
-    scroll-behavior: smooth;
-}
-
-.projets {
-    height: 100%;
-    background-color: color(primary);
-
-    h2 {
-        color: white;
-        margin-bottom: 30px;
-        position: relative;
-        width: max-content;
-
-        &::after {
-            position: absolute;
-            bottom: -4px;
-            left: 0px;
-            width: 100%;
-            background-color: color(secondary);
-            content: '';
-            height: 4px;
-        }
-    }
-}
-
-.color-style-1 {
-    color: color(text);
-}
-
-
-.icon-wrapper {
-    width: 35px;
-    display: flex;
-
-    &.icon-small {
-        width: 25px;
-    }
-
-    img {
-        @include objectFit(cover, center, 100%, 100%);
-
-        path {
-            color: red;
-        }
-    }
-}
+@import "./../common/mixins";
+@import "./../common/variables";
 
 .header {
     height: 100vh;
@@ -62,57 +17,6 @@ html {
         @include flex(column, nowrap, center, flex-start);
         height: 500px;
         gap: 12px;
-
-        button {
-
-            border: 0;
-            padding: 0;
-            border-radius: 5px;
-
-            a {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                color: white;
-                font-weight: 500;
-                border-radius: 5px;
-                border: color(secondary);
-                background-color: color(secondary);
-                font-size: rem(18);
-                width: max-content;
-                transition: all .3s ease-in;
-                cursor: pointer;
-                padding: 12px;
-                overflow: hidden;
-
-                .icon-wrapper {
-                    width: 16px;
-                }
-                
-            }
-         
-
-            &:hover {
-
-                a {
-                    border-radius: 5px;
-                    background-color: color(secondary_hover);
-                }
-
-                .icon-wrapper {
-                    animation: bounce 1s infinite;
-
-                    @keyframes bounce {
-                        0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
-                        40% {transform: translateY(-7px);} 
-                        60% {transform: translateY(-3px);} 
-                    }
-
-                }
-
-            }
-
-        }
     }
 
     .image-wrapper {
@@ -146,7 +50,6 @@ html {
     &_container {
         @include flex(row, nowrap, center, center);
         gap: 45px;
-        color: color(primary);
 
         @media screen and (max-width: $tablet) {
             flex-direction: column-reverse;
@@ -169,57 +72,8 @@ html {
 
             .introduction-title {
                 margin-bottom: 20px;
-                position: relative;
-                width: max-content;
-
-                &::after {
-                    position: absolute;
-                    bottom: -4px;
-                    left: 0px;
-                    width: 100%;
-                    background-color: color(primary);
-                    content: '';
-                    height: 4px;
-                }
             }
 
-            button {
-                margin-top: 20px;
-                background-color: color(primary);
-                border-radius: 5px;
-                padding: 8px 12px;
-                border-color: color(primary);
-                cursor: pointer;
-                transition: all .3s ease-in;
-
-                a {
-                    @include flex(row, nowrap, center, center);
-                    gap: 8px;
-                    color: white;
-
-                }
-
-                .icon-wrapper {
-                    overflow: hidden;
-                }
-
-                &:hover {
-                    background-color: color(primary_hover);
-
-                    .icon-wrapper {
-                        animation: bounce 1s infinite;
-
-                        @keyframes bounce {
-                            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
-                            40% {transform: translateY(-7px);} 
-                            60% {transform: translateY(-3px);} 
-                        }
-
-                    }
-
-                }
-
-            }
         }
     }
 
@@ -233,18 +87,6 @@ html {
 
         .competence {
             margin-bottom: 80px;
-            position: relative;
-            width: fit-content;
-
-            &::after {
-                position: absolute;
-                bottom: -4px;
-                left: 0px;
-                width: 100%;
-                background-color: color(secondary);
-                content: '';
-                height: 4px;
-            }
         }
 
         h3 {
@@ -254,6 +96,7 @@ html {
             padding: 8px 12px;
             border-radius: 5px;
             color: white;
+            font-size: rem(20);
         }
 
         ul {
@@ -263,8 +106,8 @@ html {
             li {
                 background-color: white;
                 border-radius: 15px;
-                color: color(primary);
                 box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+                color: color(primary);
 
                 .logo_wrapper {
                     width: 120px;
@@ -274,7 +117,6 @@ html {
                     img {
                         @include objectFit(contain, center, 100%, 100%);
                     }
-
 
                 }
 
@@ -289,8 +131,16 @@ html {
         }
     }
 
+}
 
+.projets {
+    height: 100%;
+    background-color: color(primary);
 
+    h2 {
+        color: white;
+        margin-bottom: 30px;
+    }
 }
 
 .openclassrooms {
@@ -298,12 +148,10 @@ html {
     &_container {
         @include flex(row, nowrap, center, center);
         gap: 45px;
-        color: color(primary);
 
         @media screen and (max-width: $tablet) {
             flex-direction: column;
         }
-
 
         .image-wrapper {
             flex: 1;
@@ -321,80 +169,16 @@ html {
             flex: 1;
 
             h2 {
-                color: color(primary);
                 margin-bottom: 40px;
-                position: relative;
-                width: max-content;
-        
-                &::after {
-                    position: absolute;
-                    bottom: -4px;
-                    left: 0px;
-                    width: 100%;
-                    background-color: color(secondary);
-                    content: '';
-                    height: 4px;
-                }
             }
 
             h3 {
                 margin-bottom: 15px;
-                font-size: 24px;
             }
 
             p:nth-child(2n) {
                 margin-top: 15px;
             }
-        }
-
-        button {
-            border: 0;
-            border-radius: 5px;
-            @include flex(row, nowrap, center, center);
-            padding: 8px 12px;
-            gap: 8px;
-            background-color: color(secondary);
-            cursor: pointer;
-            margin-top: 20px;
-
-            a {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                color: white;
-                font-weight: 500;
-                border-radius: 5px;
-                border: color(secondary);
-                font-size: rem(18);
-                width: max-content;
-                transition: all .3s ease-in;
-                cursor: pointer;
-                overflow: hidden;
-
-                .icon-wrapper {
-                    width: 16px;
-                }
-                
-            }
-         
-
-            &:hover {
-
-                background-color: color(secondary_hover);
-              
-                .icon-wrapper {
-                    animation: bounce 1s infinite;
-
-                    @keyframes bounce {
-                        0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
-                        40% {transform: translateY(-7px);} 
-                        60% {transform: translateY(-3px);} 
-                    }
-
-                }
-
-            }
-
         }
 
     }
@@ -406,12 +190,10 @@ html {
 
     .container {
 
-        color: color(primary);
         text-align: center;
 
-
         h2 {
-            margin-bottom: 30px;
+            margin: auto auto 30px auto;
         }
 
         .contact_link {
@@ -432,9 +214,9 @@ html {
                 border-radius: 5px;
                 @include flex(column, nowrap, flex-end, center);
                 box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
-                color: color(primary);
+
                 font-weight: 700;
-                padding: 15px;
+                padding: 15px 8px;
 
                 span:last-child {
                     margin-top: 4px;

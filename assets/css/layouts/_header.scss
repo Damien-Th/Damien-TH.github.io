@@ -1,3 +1,6 @@
+@import "./../common/mixins";
+@import "./../common/variables";
+
 header {
 
     position: sticky;
@@ -29,7 +32,6 @@ header {
     
             li {
                 a {
-    
                     position: relative;
                     font-weight: bold;
                     color: white;
@@ -63,25 +65,21 @@ header {
         display: none;
     }
 
-   
+    .hamburger {
+        display: none;
+    }
     
 }
 
-.hamburger {
-    display: none;
-}
+//-- responsive Tablet & Mobile --//
 
 @media screen and (max-width: $tablet) {
 
     header {
-       .container {
-            @include flex(row,nowrap, space-between, center);
-            position: relative;
-       }
-
+       
         .navigation-desktop {
             ul {
-         
+
                 li {
                     display: none;
                 }
@@ -98,7 +96,7 @@ header {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: $secondary;
+            background-color: color(secondary);
             width: 100%;
             height: 100%;
             display: block;
@@ -158,9 +156,7 @@ header {
             cursor: pointer;
         }
         
-        .bar1,
-        .bar2,
-        .bar3 {
+        .bar {
             width: 35px;
             height: 6px;
             background-color: white;
@@ -193,6 +189,4 @@ header {
         }
     }
 
-    
-    
  }

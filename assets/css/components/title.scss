@@ -1,0 +1,23 @@
+@import "./../common/mixins";
+@import "./../common/variables";
+
+.title-custom {
+    position: relative;
+    width: fit-content;
+
+    &.title-style-2 {
+        &::after {
+            background-color: color(primary);
+        }
+    }
+    
+    &::after {
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
+        width: 100%;
+        background-color: color(secondary);
+        content: '';
+        height: 4px;
+    }
+}

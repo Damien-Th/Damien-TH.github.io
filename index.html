@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+	<title>Portfolio - Damien T</title>
 	<link rel="stylesheet" href="dist/styles/main.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
 	<header class="navbar" id="navbar">
 		<div class="header-container ">
@@ -40,16 +38,17 @@
 		</div>
 	</header>
 	<main>
-		<section id="top_page" class="container space_section_big header">
+		<!---- First Section ---->
+		<section id="top_page" class="container space_top_section header">
 			<div data-aos-delay="100" data-aos="fade-right" data-aos-duration="600" class="information">
 				<h1>Bonjour, je suis Damien</h1>
-				<h2 class="color-style-1">Développeur web</h2>
-				<p class="color-style-1 small_introduction">Récemment terminer mon alternance dans une agence web,
+				<h2>Développeur web</h2>
+				<p class="small_introduction">Récemment terminer mon alternance dans une agence web,
 					j'aimerai mettre à disposition les connaissances que j'ai acquises.</p>
 				<button>
 					<a href="#introduction">
 						<span >En savoir plus</span>
-						<span class="icon-wrapper">
+						<span class="icon-wrapper icon-small">
 							<img src="/assets/images/svg/square-caret-down-regular.svg" alt="btn">
 						</span>
 					</a>
@@ -61,13 +60,14 @@
 				</div>
 			</div>
 		</section>
+		<!---- Introduction ---->
 		<section id="introduction" class="space_section introduction">
 			<div class="container introduction_container">
 				<div data-aos="fade-right" class="image-wrapper">
 					<img src="/assets/images/restroom.jpg" alt="restroom">
 				</div>
 				<div data-aos="fade-down" class="text-wrapper">
-					<h2 class="introduction-title">Présentation</h2>
+					<h2 class="introduction-title title-custom title-style-2">Présentation</h2>
 					<p> Ancien Technicien en Télécommunications. J'ai ensuite voyagé seul pendant plus de 5 ans dans
 						différents continents,
 						j'ai dû apprendre à m'adapter à divers environnements. Récemment validé mon Diplôme RNCP niveau
@@ -80,10 +80,10 @@
 						tout au long de
 						mon parcours professionnel et personnel.
 					</p>
-					<button>
+					<button class="btn-style-2">
 						<a href="/assets/pdf/CV_THERY_Damien.pdf" target="_blank">
 							<span>Mon CV</span>
-							<span class="icon-wrapper icon-small">
+							<span class="icon-wrapper">
 								<img src="/assets/images/svg/download-alt.svg" alt="btn">
 							</span>
 						</a>
@@ -91,41 +91,43 @@
 				</div>
 			</div>
 		</section>
+		<!---- Skills ---->
 		<section id="skills" class="space_section competence">
 			<div class="container competence_container">
-				<h2 class="competence">Compétences</h2>
+				<h2 class="competence title-custom">Compétences</h2>
 				<div>
 					<div>
 						<h3>Languages</h3>
 						<ul id="skills_languages">
-							<!-- Skills.js -->
+							<!-- Template in Skills.js -->
 						</ul>
 					</div>
 					<div>
 						<h3>Autres</h3>
 						<ul id="skills_others">
-							<!-- Skills.js -->
+							<!-- Template in Skills.js -->
 						</ul>
 					</div>
 				</div>
 			</div>
 		</section>
+		<!---- Projects Akyos ---->
 		<section id="projects" class="space_section projets">
 			<div class="projets_container container">
-				<div>
-					<h2>Projets - Alternance chez Akyos</h2>
-				</div>
+				<h2 class="title-custom ">Projets - Alternance chez Akyos</h2>
 				<div class="swiper mySwiper">
 					<div id="realisation" class="swiper-wrapper">
-						<!-- Websites.js -->
+						<!-- Template in Websites.js -->
 					</div>
 				</div>
 				<div class="swiper-pagination"></div>
+			</div>
 		</section>
+		<!---- Projects OpenClassrooms ---->
 		<section class="space_section openclassrooms">
 			<div class="container openclassrooms_container">
 				<div data-aos="fade-up" class="text-wrapper">
-					<h2>Projet final - OpenClassrooms</h2>
+					<h2 class="title-custom">Projet final - OpenClassrooms</h2>
 					<h3>Créez un réseau social d’entreprise</h3>
 					<p>Le projet consiste à construire un réseau social interne pour les employés de Groupomania.
 						Le but de cet outil est de faciliter les interactions entre collègues. Le département RH de
@@ -134,10 +136,12 @@
 					</p>
 					<p>Techno utilisés: Nodejs, Express, Mysql, Sequelize, React</p>
 					<button>
-						<a href="https://github.com/Damien-Th/groupomania" target="_blank">Le Repo</a>
-						<div class="icon-wrapper icon-small">
-							<img src="/assets/images/svg/github_white.svg" alt="logo github">
-						</div>
+						<a href="https://github.com/Damien-Th/groupomania" target="_blank">
+							<span>Le Repo</span>
+							<span class="icon-wrapper">
+								<img src="/assets/images/svg/github_white.svg" alt="logo github">
+							</span>
+						</a>
 					</button>
 				</div>
 				<div data-aos="fade-left" class="image-wrapper">
@@ -146,9 +150,10 @@
 			</div>
 			</div>
 		</section>
+		<!---- Contact Section ---->
 		<section id="contact" class="contact space_section">
 			<div class="container ">
-				<h2>Entrer en contact</h2>
+				<h2 class="title-custom title-style-2">Entrer en contact</h2>
 				<p>Si vous êtes intéressés par mon profil, ou que vous avez un projet à me soumettre,
 					vous pouvez me contacter par les moyens disponibles.
 					Je tâcherai de vous répondre dans les meilleurs délais.</p>
@@ -186,8 +191,8 @@
 		</section>
 	</main>
 	<footer>
-		<p id="foot" class="container">
-			<!-- UpdateYear.js -->
+		<p id="foot" class="container white_text">
+			<!-- Template in UpdateYear.js -->
 		</p>
 	</footer>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

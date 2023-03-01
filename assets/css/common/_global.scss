@@ -1,3 +1,6 @@
+@import "./mixins";
+@import "./variables";
+
 html, body{
     margin: 0;
     padding: 0;
@@ -10,6 +13,11 @@ html {
 
 h1, h2, h3, p {
     margin: 0;
+    color: color(primary);
+
+    &.white_text {
+        color: white;
+    }
 }
 
 *,
@@ -67,16 +75,6 @@ a {
     }
 }
 
-.navbar {
-    .container {
-        padding: 25px 50px;
-    
-        @media screen and (max-width: $mobile) {
-            padding: 25px 30px;
-        }
-    }
-}
-
 .space_section {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -86,7 +84,7 @@ a {
     }
 }
 
-.space_section_big {
+.space_top_section {
     padding-top: 50px;
     padding-bottom: 80px;
 
