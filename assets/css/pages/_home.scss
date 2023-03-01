@@ -17,11 +17,20 @@
         @include flex(column, nowrap, center, flex-start);
         height: 500px;
         gap: 12px;
+
+        @media screen and (max-width: $mobile) {
+            justify-content: flex-start;
+        }
     }
 
     .image-wrapper {
         @include flex(row, nowrap, flex-end, initial);
         flex: 1;
+
+        @media screen and (max-width: $mobile) {
+            align-items: center;
+            justify-content: center;
+        }
 
         .shape {
             width: 100%;
@@ -32,6 +41,10 @@
 
             @media screen and (max-width: $tablet) {
                 max-width: 350px;
+            }
+
+            @media screen and (max-width: $mobile) {
+                height: 320px;
             }
 
             img {

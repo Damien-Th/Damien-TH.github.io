@@ -379,12 +379,23 @@ header .hamburger {
   height: 500px;
   gap: 12px;
 }
+@media screen and (max-width: 690px) {
+  .header .information {
+    justify-content: flex-start;
+  }
+}
 .header .image-wrapper {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: initial;
   flex: 1;
+}
+@media screen and (max-width: 690px) {
+  .header .image-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
 }
 .header .image-wrapper .shape {
   width: 100%;
@@ -396,6 +407,11 @@ header .hamburger {
 @media screen and (max-width: 999px) {
   .header .image-wrapper .shape {
     max-width: 350px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .header .image-wrapper .shape {
+    height: 320px;
   }
 }
 .header .image-wrapper .shape img {
