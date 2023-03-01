@@ -705,20 +705,8 @@ header .hamburger {
   --secondary_hover: #e99b00;
 }
 
-button {
-  border: 0;
-  padding: 0;
+a.cta {
   margin-top: 20px;
-  border-radius: 5px;
-}
-button.btn-style-2 a {
-  border: var(--primary);
-  background-color: var(--primary);
-}
-button.btn-style-2:hover a {
-  background-color: var(--primary_hover);
-}
-button a {
   display: flex;
   gap: 12px;
   color: white;
@@ -733,23 +721,30 @@ button a {
   padding: 12px;
   overflow: hidden;
 }
-button a .icon-wrapper {
+a.cta .icon-wrapper {
   display: flex;
   width: 25px;
 }
-button a .icon-wrapper.icon-small {
+a.cta .icon-wrapper.icon-small {
   width: 18px;
 }
-button a .icon-wrapper img {
+a.cta .icon-wrapper img {
   object-fit: cover;
   object-position: center;
   height: 100%;
   width: 100%;
 }
-button:hover a {
+a.cta.btn-style-2 {
+  border: var(--primary);
+  background-color: var(--primary);
+}
+a.cta.btn-style-2:hover {
+  background-color: var(--primary_hover);
+}
+a.cta:hover {
   background-color: var(--secondary_hover);
 }
-button:hover .icon-wrapper {
+a.cta:hover .icon-wrapper {
   animation: bounce 1s infinite;
 }
 @keyframes bounce {

@@ -1,66 +1,49 @@
 @import "./../common/mixins";
 @import "./../common/variables";
 
-button {
-
-    border: 0;
-    padding: 0;
+a.cta {
     margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    color: white;
+    font-weight: 500;
     border-radius: 5px;
+    border: color(secondary);
+    background-color: color(secondary);
+    font-size: rem(18);
+    width: fit-content;
+    transition: all .3s ease-in;
+    cursor: pointer;
+    padding: 12px;
+    overflow: hidden;
+
+    .icon-wrapper {
+        display: flex;
+        width: 25px;
+
+        &.icon-small {
+            width: 18px;
+        }
+
+        img {
+            @include objectFit(cover, center, 100%, 100%);
+        }
+    }
 
     &.btn-style-2 {
 
-        a { 
-            border: color(primary);
-            background-color: color(primary);
-        }
+        border: color(primary);
+        background-color: color(primary);
         
         &:hover {
-
-            a {
-                background-color: color(primary_hover);
-            }
-
+            background-color: color(primary_hover);
         }
     }
-
-    a {
-        display: flex;
-        gap: 12px;
-        color: white;
-        font-weight: 500;
-        border-radius: 5px;
-        border: color(secondary);
-        background-color: color(secondary);
-        font-size: rem(18);
-        width: fit-content;
-        transition: all .3s ease-in;
-        cursor: pointer;
-        padding: 12px;
-        overflow: hidden;
-
-        .icon-wrapper {
-            display: flex;
-            width: 25px;
-
-            &.icon-small {
-                width: 18px;
-            }
-
-            img {
-                @include objectFit(cover, center, 100%, 100%);
-            }
-        }
-        
-    }
- 
 
     &:hover {
 
-        a {
-            background-color: color(secondary_hover);
-        }
-
+        background-color: color(secondary_hover);
+        
         .icon-wrapper {
             animation: bounce 1s infinite;
 
@@ -73,5 +56,9 @@ button {
         }
 
     }
-
+    
 }
+ 
+
+
+
